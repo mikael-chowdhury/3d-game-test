@@ -5,25 +5,29 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    float startTime;
+    public float TimeBetweenWaves;
+
+    public GameObject enemy_object;
+
+    protected List<Transform> spawnPoints = new List<Transform>();
+
+
     // Start is called before the first frame update
     void Start()
     {
-        startTime = GetCurrentTime();
-    }
+        GameObject wps = GameObject.FindGameObjectWithTag("Spawnpoints");
 
-    private float GetCurrentTime()
-    {
-        return DateTimeOffset.Now.ToUnixTimeMilliseconds();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if ((GetCurrentTime() - startTime) / 1000 >= 5)
+        foreach (Transform t in wps.transform)
         {
-            startTime = GetCurrentTime();
-
+            spawnPoints.Add(t);
         }
+
+        InvokeRepeating("SpawnWave", TimeBetweenWaves, TimeBetweenWaves);
+    }
+
+    private void SpawnWave()
+    {
+        Vector3 spawnpoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Count)].position;
+        GameObject enemy = Instantiate(enemy_object, spawnpoint, Quaternion.identity);
     }
 }

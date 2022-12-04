@@ -49,10 +49,6 @@ public class PlayerMovementScript : MonoBehaviour
             Jump();
         }
 
-        velocity.y += gravity * Time.deltaTime;
-
-        controller.Move(velocity * Time.deltaTime);
-
         if (move != Vector3.zero)
         {
             RunForward();
@@ -62,6 +58,10 @@ public class PlayerMovementScript : MonoBehaviour
             anim.SetBool("isRunning", false);
             Idle();
         }
+
+        velocity.y += gravity * Time.deltaTime;
+
+        controller.Move(velocity * Time.deltaTime);
     }
 
     private void Idle()
