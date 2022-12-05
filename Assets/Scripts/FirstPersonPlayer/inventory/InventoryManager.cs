@@ -36,6 +36,7 @@ public class InventoryManager : MonoBehaviour
         {
             if (InventoryManager.Inventory[0] != null)
             {
+                currentlyEquippedImage.gameObject.SetActive(true);
                 currentlyEquippedImage.sprite = InventoryManager.Inventory[0].icon;
                 itemhandler.EquipItem(InventoryManager.Inventory[0]);
             }
@@ -75,7 +76,7 @@ public class InventoryManager : MonoBehaviour
 
     public void Add(Item item)
     {
-        if (Inventory.Contains(item))
+        if (Inventory.Contains(item) && item.stackable)
         {
             int index = Inventory.IndexOf(item);
             inventorycounts[index]++;
@@ -88,5 +89,14 @@ public class InventoryManager : MonoBehaviour
             inventorycounts[firstfreespace] = 1;
             onItemChangedCallback.Invoke();
         }
+    }
+
+    public void RemoveOne(Item item)
+    {
+        int index = Inventory.IndexOf(item);
+
+        inventorycounts[index]--;
+
+        Inventory[index] = null;
     }
 }

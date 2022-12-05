@@ -18,7 +18,7 @@ public class ItemPickup : MonoBehaviour
             item.itemModel = collider.gameObject;
             InventoryManager.instance.Add(item);
             collider.gameObject.SetActive(false);
-            collider.gameObject.tag = "Untagged";
+            collider.gameObject.tag = "utagged";
         }
     }
 

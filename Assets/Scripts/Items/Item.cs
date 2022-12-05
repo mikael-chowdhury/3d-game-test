@@ -18,6 +18,8 @@ public class Item : MonoBehaviour
 
     protected bool equipped = false;
 
+    public bool stackable = false;
+
     public virtual void InitItem()
     {
 

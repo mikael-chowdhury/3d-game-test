@@ -4,8 +4,8 @@ using UnityEngine;
 
 class DroppedItem : MonoBehaviour
 {
-    protected GameObject itemObj;
-    protected Item item;
+    public GameObject itemObj;
+    public Item item;
     public static GameObject itemObjectParam;
 
     void Start()

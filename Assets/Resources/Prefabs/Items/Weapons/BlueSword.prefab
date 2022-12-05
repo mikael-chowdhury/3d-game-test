@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6613825908243306485
+--- !u!1 &1410801222893006422
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3623958891218073282}
-  - component: {fileID: 1665198434652504773}
-  - component: {fileID: 1125108571506666964}
-  - component: {fileID: 1813509251221079631}
+  - component: {fileID: 6367181903154182429}
+  - component: {fileID: 8614216569574146861}
+  - component: {fileID: 5301658735925877433}
+  - component: {fileID: 4779857368659369151}
+  - component: {fileID: 7245539430166703363}
   m_Layer: 0
   m_Name: BlueSword
   m_TagString: Untagged
@@ -19,13 +20,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3623958891218073282
+--- !u!4 &6367181903154182429
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6613825908243306485}
+  m_GameObject: {fileID: 1410801222893006422}
   m_LocalRotation: {x: -0.022127764, y: 0.98829424, z: 0.0312818, w: 0.14766937}
   m_LocalPosition: {x: -0.07396212, y: 0.014918863, z: -0.044695474}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -34,21 +35,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -3.92, y: 163.071, z: -1.982}
---- !u!33 &1665198434652504773
+--- !u!33 &8614216569574146861
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6613825908243306485}
+  m_GameObject: {fileID: 1410801222893006422}
   m_Mesh: {fileID: -1195938968934217610, guid: 98318b7fbb6008a488a87d8f130a5b45, type: 3}
---- !u!23 &1125108571506666964
+--- !u!23 &5301658735925877433
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6613825908243306485}
+  m_GameObject: {fileID: 1410801222893006422}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -84,20 +85,41 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1813509251221079631
+--- !u!114 &4779857368659369151
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6613825908243306485}
+  m_GameObject: {fileID: 1410801222893006422}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e91c15f0ac15cc4cbee15e7b8aeba8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemModel: {fileID: 6613825908243306485}
+  itemModel: {fileID: 1410801222893006422}
   icon: {fileID: 21300000, guid: 3924738da59452b41966539e3c833e8e, type: 3}
   itempositioninhand: {x: -0.07396212, y: 0.01491886, z: -0.04469547}
   itemrotationinhand: {x: -3.92, y: 163.071, z: -1.982}
   itemrotationonfloor: {x: 90, y: 0, z: 0}
+  stackable: 0
+--- !u!114 &7245539430166703363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410801222893006422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2617239452d74b42943e82877081ce2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemModel: {fileID: 1410801222893006422}
+  icon: {fileID: 21300000, guid: 3924738da59452b41966539e3c833e8e, type: 3}
+  itempositioninhand: {x: -0.07396212, y: 0.01491886, z: -0.04469547}
+  itemrotationinhand: {x: -3.92, y: 163.071, z: -1.982}
+  itemrotationonfloor: {x: 90, y: 0, z: 0}
+  stackable: 0
+  player: {fileID: 0}
+  attackRange: 5

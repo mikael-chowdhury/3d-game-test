@@ -8,6 +8,18 @@ public class UIHandler : MonoBehaviour
 
     public static bool REQUIRES_MOUSE = false;
 
+    public static GameObject UI_Inventory;
+    public static GameObject UI_Game;
+
+    public GameObject GameUI;
+    public GameObject InventoryUI;
+
+    void Awake()
+    {
+        UI_Inventory = InventoryUI;
+        UI_Game = GameUI;
+    }
+
     public static void Pop()
     {
         UIStack[UIStack.Count - 1].Ui.SetActive(false);

@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sword : Item
+public class Sword : Melee
 {
-
     public override void InitItem()
     {
         base.itemname = "Sword";
